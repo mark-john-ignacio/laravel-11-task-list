@@ -7,11 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <title>Laravel 11 Task List App</title>
+    @yield('styles')
 </head>
 <body>
     <h1>
         @yield('title')
     </h1>
+    @if (session()->has('success'))
+        <div>{{ session('success') }}</div>
+    @endif
     <div>
         @yield('content')
     </div>

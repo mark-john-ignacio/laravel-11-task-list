@@ -3,10 +3,14 @@
 @section('title', 'List of tasks')
 
 @section('content')
-{{--    @if(count($tasks))--}}
+    <form action="{{ route('tasks.create') }}">
+        <button type="submit">Create Task</button>
+    </form>
+
+    {{--    @if(count($tasks))--}}
     @forelse($tasks as $task)
             <div>
-                <a href="{{ route('task.show', ['id' => $task->id]) }}">{{ $task->title }}</a>
+                <a href="{{ route('tasks.show', ['id' => $task->id]) }}">{{ $task->title }}</a>
             </div>
     @empty
         <p>No tasks</p>
