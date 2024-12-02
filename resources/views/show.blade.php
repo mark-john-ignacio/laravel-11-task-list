@@ -12,9 +12,25 @@
     <p>{{ $task->created_at }}</p>
     <p>{{ $task->updated_at }}</p>
 
+    <p>
+        @if($task->completed)
+            Completed
+        @else
+            Not Completed
+        @endif
+    </p>
+
     <div>
-        <form action="{{ route('tasks.edit', $task->id) }}">
+        <form action="{{ route('tasks.edit', $task) }}">
             <button type="submit">Edit Task</button>
+        </form>
+
+        <form method="POST" action="{{ route('tasks.toggle-complete', ["task" => $task]) }}">
+            @csrf
+            @method('PUT')
+            <button type="submit">
+                Mark as {{ $task->completed ? 'not completed' : 'complete'}}
+            </button>
         </form>
 
         <form method="POST" action="{{ route('tasks.destroy', $task->id) }}">
