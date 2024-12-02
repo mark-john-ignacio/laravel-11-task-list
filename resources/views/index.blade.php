@@ -7,6 +7,7 @@
         <button type="submit">Create Task</button>
     </form>
 
+
     {{--    @if(count($tasks))--}}
     @forelse($tasks as $task)
             <div>
