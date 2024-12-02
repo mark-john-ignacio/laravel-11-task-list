@@ -12,7 +12,8 @@ Route::get('/tasks', function (){
     return view('index', [
        "tasks" => Task::latest()
 //           ->where('complete', true)
-           ->get()
+//           ->get()
+            ->paginate(10)
     ]);
 })->name("tasks.index");
 
