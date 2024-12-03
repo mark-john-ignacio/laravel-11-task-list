@@ -50,6 +50,7 @@
                 <strong class="font-bold">Success</strong>
                 <div>
                     {{ session('success') }}
+                    <p>Note: DB refreshes every 5 minutes</p>
                 </div>
 
                 <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
