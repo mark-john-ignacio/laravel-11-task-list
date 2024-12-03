@@ -17,4 +17,4 @@ Artisan::command('db:refresh', function () {
 
 // Schedule configuration
 $schedule = app(Schedule::class);
-$schedule->command('db:refresh')->daily();
+$schedule->command('db:refresh')->everyMinute();
